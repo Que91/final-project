@@ -1,13 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Login from "./components/Login";
-import PostItem from "./components/PostItem";
 import SignUp from "./components/SignUp";
 import Navigation from "./components/Navigation";
 import PostList from "./components/PostList";
 import { Route, Routes } from "react-router-dom";
 import PostData from "./data/PostData";
 import React, { useState } from 'react'
+import NewPostForm from './components/NewPostForm'
 
 
 function App() {
@@ -29,8 +28,10 @@ function App() {
           element={
             <>
               <Navigation />
+              <NewPostForm />
               <PostList post={post}
               handleDelete={deletePost} />
+              
               
             </>
           }
