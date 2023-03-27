@@ -1,18 +1,18 @@
-function PostItem({ item, handleDelete }) {
-  
+import { useContext } from "react";
+import PostContext from '../context/PostContext'
+
+function PostItem({ item }) {
+  const {deletePost, editPost} = useContext (PostContext)
 
   
-  const handleEditPost = () => {};
-  
-
   return (
     <>
       <p>{item.text}</p>
 
-      <button onClick={handleEditPost} className="btns" id="editBtn">
+      <button onClick={() => editPost(item)} className="btns" id="editBtn">
         Edit
       </button>
-      <button onClick={() => handleDelete(item.id)} className="btns" id="deleteBtn">
+      <button onClick={() => deletePost(item.id)} className="btns" id="deleteBtn">
         Delete
       </button>
     </>

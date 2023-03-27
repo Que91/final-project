@@ -1,8 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import PostContext from "../context/PostContext";
 
-function NewPostForm({handleAdd}) {
+function NewPostForm() {
   const [text, setText] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
+
+  const { addPost, postEdit, updatePost } = useContext(PostContext);
+
+  useEffect(() => {
+    if (postEdit.edit === true) {
+      setBtnDisabled(false);
+      setText(postEdit.item.text);
+    }
+  }, [postEdit]);
 
   const handleTextChange = (e) => {
     if (text === "") {
@@ -15,11 +25,15 @@ function NewPostForm({handleAdd}) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const createdPost = {
-      text
+      text,
     };
-    handleAdd(createdPost);
-    
-    setText('')
+    if (postEdit.edit === true) {
+      updatePost(postEdit.item.id, createdPost);
+    } else {
+      addPost(createdPost);
+    }
+
+    setText("");
   };
 
   return (
