@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function NewPostForm() {
+function NewPostForm({handleAdd}) {
   const [text, setText] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
 
@@ -13,10 +13,14 @@ function NewPostForm() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    const createdPost = {
+      text
+    };
+    handleAdd(createdPost);
     
+    setText('')
   };
-
 
   return (
     <form onSubmit={handleSubmit}>

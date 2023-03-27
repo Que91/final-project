@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid'
 import "./App.css";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
@@ -12,6 +13,12 @@ import NewPostForm from './components/NewPostForm'
 function App() {
   const [post, setPost] = useState(PostData);
   
+  const addPost = (createdPost) => {
+    createdPost.id = uuidv4()
+    setPost([createdPost,...post])
+    console.log(createdPost)
+  }
+
   const deletePost = (id) => {
     if(window.confirm('Are you sure you want to delete?')){
       setPost(post.filter((item) => item.id !== id))
@@ -28,7 +35,7 @@ function App() {
           element={
             <>
               <Navigation />
-              <NewPostForm />
+              <NewPostForm handleAdd={addPost} />
               <PostList post={post}
               handleDelete={deletePost} />
               

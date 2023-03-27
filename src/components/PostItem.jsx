@@ -1,7 +1,7 @@
 function PostItem({ item, handleDelete }) {
   
 
-  const handleNewPost = () => {};
+  
   const handleEditPost = () => {};
   
 
@@ -9,9 +9,6 @@ function PostItem({ item, handleDelete }) {
     <>
       <p>{item.text}</p>
 
-      <button onClick={handleNewPost} className="btns" id="postBtn">
-        Post
-      </button>
       <button onClick={handleEditPost} className="btns" id="editBtn">
         Edit
       </button>
