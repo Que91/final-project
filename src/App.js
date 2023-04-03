@@ -7,24 +7,29 @@ import { Route, Routes } from "react-router-dom";
 import NewPostForm from "./components/NewPostForm";
 import { PostProvider } from "./context/PostContext";
 
+
 function App() {
   return (
+
     <PostProvider>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route
-            path="/"
-            element={
-              <>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <div className="liveFeed">
                 <Navigation />
                 <NewPostForm />
                 <PostList />
-              </>
-            }
-          />
-        </Routes>
+              </div>
+            </>
+          }
+        />
+      </Routes>
     </PostProvider>
+
   );
 }
 

@@ -15,6 +15,15 @@ export const PostProvider = ({ children }) => {
     fetchPost();
   }, []);
 
+  const USERS_URL = "https://final-project-55d8a-default-rtdb.firebaseio.com/users"
+  const POSTS_URL = "https://final-project-55d8a-default-rtdb.firebaseio.com/post"
+  const EXT = '.json'
+
+
+
+// Get Post
+
+
   const fetchPost = async () => {
     const response = await fetch(
       "http://localhost:5000/post?_sort=id&_order=desc"
@@ -38,7 +47,7 @@ export const PostProvider = ({ children }) => {
   };
 
 
-  //Delete Post
+  //Edit Post
   const editPost = (item) => {
     setPostEdit({
       item,

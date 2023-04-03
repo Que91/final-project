@@ -37,10 +37,9 @@ function NewPostForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="newPostForm" onSubmit={handleSubmit}>
       <h2>Live Feed</h2>
       <input type="text" value={text} onChange={handleTextChange} />
-
       <button disabled={btnDisabled} type="submit">
         Post
       </button>

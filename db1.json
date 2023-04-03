@@ -1,0 +1,18 @@
+{
+    "users": {
+        "Que B.": {
+            "name": "Que",
+            "password": "password1"
+        },
+        "Quotum Tech": {
+            "name": "Quotum",
+            "password": "password2"
+        }
+    },
+    "posts": {
+        "uuid": {
+            "user": "Que",
+            "text": "Test Post"
+        }
+    }
+}
