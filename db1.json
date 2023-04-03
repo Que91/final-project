@@ -1,6 +1,6 @@
 {
     "users": {
-        "Que B.": {
+        "Que B": {
             "name": "Que",
             "password": "password1"
         },
@@ -10,9 +10,13 @@
         }
     },
     "posts": {
-        "uuid": {
+        "uuid1": {
             "user": "Que",
             "text": "Test Post"
+        },
+        "uuid2": {
+            "user": "Quotum",
+            "text": "Test Post from Quotum"
         }
     }
 }
